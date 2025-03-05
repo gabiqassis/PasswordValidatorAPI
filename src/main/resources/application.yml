@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+    display-request-duration: true
+
+openapi:
+  servers:
+    urls: http://localhost:${server.port}, http://127.0.0.1:${server.port}
