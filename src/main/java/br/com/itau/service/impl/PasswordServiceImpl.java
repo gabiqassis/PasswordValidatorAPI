@@ -18,9 +18,16 @@ public class PasswordServiceImpl implements PasswordService {
 
     private final Password password;
 
+    @Async
     @Override
     public CompletableFuture<PasswordResponse> validatePasswordRules(PasswordRequest request) {
         log.info("Iniciando validação de senha");
+
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         try {
             password.rulesPassword(request);

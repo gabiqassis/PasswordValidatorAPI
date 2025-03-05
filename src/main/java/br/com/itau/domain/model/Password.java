@@ -2,12 +2,13 @@ package br.com.itau.domain.model;
 
 import br.com.itau.domain.request.PasswordRequest;
 import io.swagger.v3.oas.annotations.media.Schema;
+import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 import java.util.regex.Pattern;
 
+@Component
 public class Password {
-
     @Schema(
             description = "Senha do usuário. Deve conter pelo menos 9 caracteres, um número, uma letra maiúscula, uma letra minúscula, um caractere especial e não possuir caracteres repetidos.",
             example = "P@ssw0rd!",

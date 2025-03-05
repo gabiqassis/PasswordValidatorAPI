@@ -3,6 +3,7 @@ package br.com.itau.controller;
 import br.com.itau.domain.request.PasswordRequest;
 import br.com.itau.domain.response.PasswordResponse;
 import br.com.itau.service.PasswordService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class AsyncValidateController {
     private PasswordService service;
 
     @PostMapping(PathConstants.VALIDATE_V1)
-    public ResponseEntity<PasswordResponse> validatePassword(@RequestBody PasswordRequest request) {
+    public ResponseEntity<PasswordResponse> validatePassword(@RequestBody @Valid PasswordRequest request) {
         try {
             PasswordResponse response = service.validatePasswordRules(request).get();
             return ResponseEntity.ok(response);
