@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+openapi:
+  servers:
+    urls: http://localhost:${server.port}, http://127.0.0.1:${server.port}
